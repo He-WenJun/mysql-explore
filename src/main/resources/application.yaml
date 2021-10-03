@@ -1,0 +1,24 @@
+server:
+  port: 80
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    username: root
+    password: 510151
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/mysql-explore?useUnicode=true&characterEncoding=utf8&serverTimezone=UTC
+  jpa:
+    # 显示sql语句
+    # show-sql: true
+    hibernate:
+      # 该配置自动检查实体和数据库表是否一致，如果不一致则会进行更新数据库表，
+      ddl-auto: update
+    properties:
+      hibernate:
+        generate_statistics: true
+        order_inserts: true
+        jdbc:
+          batch_size: 100000
+logging:
+  level:
+    com.hwj.mysqlexplore.**: debug
